@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
+import { SeriesListComponent } from './series/series-list/series-list.component';
 
 @Component({
+  standalone: true,
   selector: 'app-root',
+  imports: [SeriesListComponent],
   templateUrl: './app.component.html',
-  standalone: false,
-  styleUrl: './app.component.css'
 })
-export class AppComponent {
-  title = 'tallerAngular';
-}
+export class AppComponent {}
