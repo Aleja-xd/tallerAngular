@@ -1,0 +1,16 @@
+<div class="card mt-4" style="max-width: 720px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img [src]="serie.poster" class="img-fluid rounded-start" alt="{{ serie.name }}">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ serie.name }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ serie.channel }}</h6>
+        <p class="card-text"><strong>Temporadas:</strong> {{ serie.seasons }}</p>
+        <p class="card-text">{{ serie.description }}</p>
+        <a [href]="serie.webpage" target="_blank" class="btn btn-sm btn-primary">Ver más</a>
+      </div>
+    </div>
+  </div>
+</div>

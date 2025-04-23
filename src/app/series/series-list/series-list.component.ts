@@ -2,16 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SerieService } from '../serie.service';
 import { Serie } from '../serie.model';
-import { HttpClientModule} from '@angular/common/http';
-
+import { SerieDetailComponent } from '../serie-detail/serie-detail.component';
 @Component({
   selector: 'app-series-list',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, SerieDetailComponent],
   templateUrl: './series-list.component.html'
 })
 export class SeriesListComponent implements OnInit {
   series: Serie[] = [];
+  selectedSerie: Serie | null = null;
 
   constructor(private serieService: SerieService) {}
 
@@ -30,6 +30,9 @@ export class SeriesListComponent implements OnInit {
     if (this.series.length === 0) return 0;
     const total = this.series.reduce((sum, s) => sum + s.seasons, 0);
     return total / this.series.length;
+  }
+  selectSerie(serie: Serie): void {
+    this.selectedSerie = serie;
   }
 
 }
